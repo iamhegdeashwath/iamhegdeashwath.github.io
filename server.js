@@ -16,7 +16,7 @@ var smtpTransport = nodeMailer.createTransport("SMTP",{
 
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(bodyParser.json());
-app.set('port', (process.env.PORT || 3300));
+//app.set('port', (process.env.PORT || 3300));
 app.use(express.static(__dirname + '/app'));
 app.set('views', __dirname + '/app');
 app.engine('html', require('ejs').renderFile);
@@ -69,7 +69,7 @@ app.post('/postEmail',function(req,res){
     });
 });
 
-app.listen(app.get('port'), function() {
-});
+//app.listen(app.get('port'), function() {
+//});
 
-console.log('Magic happens on port ' + app.get('port'));
+console.log('Check if Magic happens');
