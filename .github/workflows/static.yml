@@ -47,6 +47,8 @@ jobs:
           node-version: 10.x # optional
       - name: Install NPM Dependencies
         run: npm install
+      - name: Install Bower
+        run: npm install -g bower
       - name: Install Bower Dependencies
         run: bower install
       - name: Start Server
