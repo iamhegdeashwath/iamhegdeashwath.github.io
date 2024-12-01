@@ -19,6 +19,7 @@
             }
 
             .error-container {
+                background: rgb(254 253 237);
                 text-align: center;
                 padding: 3rem 1rem;
                 flex-shrink: 0;
@@ -39,9 +40,29 @@
             .error-page-btn {
                 margin: auto;
                 margin-top: 20px;
+                position: relative;
+                width: 100%;
+                background: linear-gradient(
+                    to bottom right, 
+                    hsl(0, 0%, 25%) 0%, 
+                    hsla(0, 0%, 25%, 0) 50%
+                );
+                color: hsl(45, 100%, 72%);
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                gap: 10px;
+                padding: 13px 20px;
+                border-radius: 14px;
+                font-size: 14px;
+                text-transform: capitalize;
+                box-shadow: 0 16px 40px hsla(0, 0%, 0%, 0.25);
+                z-index: 1;
+                transition: 0.25s ease;
             }
             
             .error-img-container {
+                background: rgb(254 253 237);
                 width: 100%;
                 height: 50%;
                 display: flex;
@@ -56,7 +77,7 @@
                 object-fit: contain;
             }
 
-            .form-btn::before {
+            .error-page-btn::before {
                 content: "";
                 position: absolute;
                 inset: 1px;
@@ -70,9 +91,9 @@
                 transition: 0.25s ease;
             }
             
-            .form-btn ion-icon { font-size: 16px; }
+            .error-page-btn ion-icon { font-size: 16px; }
             
-            .form-btn:hover { 
+            .error-page-btn:hover { 
                 background: linear-gradient(
                     to bottom right, 
                     hsl(45, 100%, 71%) 0%, 
@@ -80,7 +101,7 @@
                 ); 
             }
             
-            .form-btn:hover::before { 
+            .error-page-btn:hover::before { 
                 background: linear-gradient(
                     135deg, 
                     hsla(45, 100%, 71%, 0.251) 0%, 
@@ -88,12 +109,12 @@
                 ), hsl(240, 2%, 13%); 
             }
             
-            .form-btn:disabled {
+            .error-page-btn:disabled {
                 opacity: 0.7;
                 cursor: not-allowed;
             }
             
-            .form-btn:disabled:hover { 
+            .error-page-btn:disabled:hover { 
                 background: linear-gradient(
                     to bottom right, 
                     hsl(0, 0%, 25%) 0%, 
@@ -101,7 +122,7 @@
                 );
             }
             
-            .form-btn:disabled:hover::before { 
+            .error-page-btn:disabled:hover::before { 
                 background: linear-gradient(
                     to bottom right, 
                     hsla(240, 1%, 18%, 0.251) 0%, 
@@ -115,12 +136,12 @@
             \*---------------------------------*/
 
             @media (min-width: 580px) {
-                .form-btn {
+                .error-page-btn {
                     font-size: 16px;
                     padding: 16px 20px;
                 }
 
-                .form-btn ion-icon { font-size: 18px; }
+                .error-page-btn ion-icon { font-size: 18px; }
             }
 
             /*---------------------------------*\
@@ -129,7 +150,7 @@
             \*---------------------------------*/
 
             @media (min-width: 768px) {
-                .form-btn {
+                .error-page-btn {
                     width: max-content;
                     margin-left: auto;
                 }
@@ -142,7 +163,7 @@
                 <h1 class="error-title">Oops! Something went wrong.</h1>
                 <h3 class="error-sub-title">404 - Page Not Found</h3>
             </span>
-            <button class="error-page-btn form-btn" onclick="window.location.href='/'">
+            <button class="error-page-btn" onclick="window.location.href='/'">
                 <ion-icon name="play-back"></ion-icon>
                 Go Back to Home
             </button>
